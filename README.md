@@ -32,3 +32,11 @@ done: console.log("Hello World!");
 Im Ordner: "src" die Datei: "02_variablen.js" anlegen
 
 done.
+
+Pfad zu "main" in package.json aktualisieren
+
+done:  "main": "src/02_variablen.js"
+
+Ausgabe Testen console.log("ping")
+
+ok
