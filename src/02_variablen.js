@@ -42,3 +42,8 @@ test = 2.5;
 console.log("Datentyp: " + typeof test);
 console.log("Inhalt:" + test);
 console.log("------------------------------------");
+
+test = true;
+console.log("Datentyp: " + typeof test);
+console.log("Inhalt:" + test);
+console.log("------------------------------------");
