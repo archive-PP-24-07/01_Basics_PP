@@ -1,4 +1,4 @@
-# 01_Basics_PP
+# 01_hello_world
 Testen, ob node.js vorhanden ist: node -v
 
 ja, v20.14.0
@@ -15,7 +15,7 @@ Ordner src anlegen
 
 done.
 
-Im Ordner Datei 01_hello_world.js anlegen
+Im Ordner: "src" die Datei: "01_hello_world.js" anlegen
 
 done.
 
@@ -26,3 +26,9 @@ done:  "main": "src/01_hello_world.js"
 Ausgabe Testen console.log("Hello, world!")
 
 done: console.log("Hello World!");
+
+# 02_variablen
+
+Im Ordner: "src" die Datei: "02_variablen.js" anlegen
+
+done.
