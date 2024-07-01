@@ -1,3 +1,4 @@
+
 // ZeilenKommentar Toogle: Strg+# //Funktioniert nicht in Firefox
 /* 
     BlockKommentar
@@ -54,6 +55,6 @@ test = "hi"; // Wertzuweisung (Initialisierung)
 test = "hello"; // Überschreiben
 console.log("Inhalt: " + test); // Ausgabe 
 
-const konstante = "hi"; //muss initialisiert werden
+const konstante = "hi"//muss initialisiert werden
 // konstante = "hello"; //erneute Wertzuweisung
 console.log(konstante);
