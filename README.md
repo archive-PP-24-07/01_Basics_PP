@@ -1,5 +1,5 @@
 # 01_Basics_PP
-Testen, ob node.js vorhanden ist: node -v
+Testen, ob node.js vorhanden ist: node -v /n
 ja, v20.14.0
 
 Testen, ob npm vorhanden ist: npm --v
