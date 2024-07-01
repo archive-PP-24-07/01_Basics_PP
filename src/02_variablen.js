@@ -1,0 +1,10 @@
+// Zeilenkommentar | Strg + #
+
+/**
+ * 
+ * 
+ * Block-Kommentar
+ * 
+ * 
+ */
+
