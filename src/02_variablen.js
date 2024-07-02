@@ -44,7 +44,7 @@
 // console.log("Inhalt: " + test); // Ausgabe Inhalt
 // console.log("----------------")
 
-// test = true;
+// test = true; // boolean
 // console.log("Datentyp: " + typeof test); // Ausgabe Datentyp
 // console.log("Inhalt: " + test); // Ausgabe Inhalt
 // console.log("----------------")
@@ -59,5 +59,5 @@ console.log("Inhalt: " + test); // Ausgabe
 
 // Konstante
 const test2 = "Hi!"; // Deklaration + Wertzuweisung gemeinsam !
-test2 = "hello"; // Fehler !! 
+test2 = "hello"; // Laufzeit-Fehler !! 
 console.log("Inhalt: " + test2); // Ausgabe 
