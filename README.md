@@ -40,3 +40,9 @@ Pfad zu "main" in package.json aktualisieren
 Ausgabe Testen console.log("ping")
 
 >ok
+
+# 03_prompt
+
+> installiern mit npm i prompt-sync
+
+> Erstelle: .gitignore
