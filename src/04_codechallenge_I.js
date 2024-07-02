@@ -11,20 +11,35 @@ Geben Sie die Summe der Zahlen in die Konsole aus:
 
 const prompt = require('prompt-sync')({sigint: true});
 let numbers = /^[0-9]+$/;
+let maxTrys = 5;
+let count = 0;
 
 let firstNumber;
 do
 {
+    count++;
     firstNumber = prompt("Bitte eine Zahl eingeben: ");
 } 
-while (!firstNumber.match(numbers));
+while (!firstNumber.match(numbers) && count < maxTrys);
+
+if (count >= maxTrys){
+    firstNumber = 5;
+    console.log("Es wurde keine Zahl eingeben. Eine Zufallszahl wird stattdessen verwendet: " + firstNumber );
+}
 
 let secondNumber;
+count = 0;
 do
 {
+    count++;
     secondNumber = prompt("Bitte eine weitere Zahl eingeben: ");
 } 
-while (!secondNumber.match(numbers));
+while (!secondNumber.match(numbers) && count < maxTrys);
+
+if (count >= maxTrys){
+    secondNumber = 7;
+    console.log("Es wurde keine weitere Zahl eingeben. Eine Zufallszahl wird stattdessen verwendet: " + secondNumber );
+}
 
 let sumNumbers = +firstNumber + +secondNumber;
 
