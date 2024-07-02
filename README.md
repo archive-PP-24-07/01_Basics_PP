@@ -46,3 +46,12 @@ Ausgabe Testen console.log("ping")
 > installiern mit npm i prompt-sync
 
 > Erstelle: .gitignore
+
+# 04_Codechallenge 01
+
+1. Geben Sie über eine Prompt-Anforderung eine Zahl ein.
+2. Geben Sie über eine Prompt-Anforderung eine zweite Zahl ein.
+3. Berechnen Sie die Summe der beiden Zahlen.
+4. Geben Sie die Summe der Zahlen in die Konsole aus:
+    "Die Summe der Zahlen ist: summe"
+
