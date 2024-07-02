@@ -12,8 +12,6 @@ Geben Sie die Summe der Zahlen in die Konsole aus:
 const prompt = require('prompt-sync')({sigint: true});
 let numbers = /^[0-9]+$/;
 
-let requestNumber = "Bitte eine Zahl eingeben: ";
-
 let firstNumber;
 do
 {
