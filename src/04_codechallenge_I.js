@@ -23,7 +23,7 @@ do
 while (!firstNumber.match(numbers) && count < maxTrys);
 
 if (count >= maxTrys){
-    firstNumber = 5;
+    firstNumber = Math.random();
     console.log("Es wurde keine Zahl eingeben. Eine Zufallszahl wird stattdessen verwendet: " + firstNumber );
 }
 
@@ -37,10 +37,10 @@ do
 while (!secondNumber.match(numbers) && count < maxTrys);
 
 if (count >= maxTrys){
-    secondNumber = 7;
+    secondNumber = Math.random();
     console.log("Es wurde keine weitere Zahl eingeben. Eine Zufallszahl wird stattdessen verwendet: " + secondNumber );
 }
 
-let sumNumbers = +firstNumber + +secondNumber;
+let sumNumbers = Number(firstNumber) + Number(secondNumber);
 
 console.log("Die Summe der Zahlen ist: " + sumNumbers );
