@@ -67,4 +67,20 @@ Wahrheitswerte und Vergleiche
 
 > Grundlagen Selektion: if, else, else if, ternärer operator, switch-case
 
-> persönliche Meinung: Switch-Case ist zutiefst zu Verdammen.
+> persönliche Meinung: Switch-Case ist zutiefst zu Verdammen jedoch bequem und effizient.
+
+# 07_Codechallenge 02
+
+1. Geben über eine Prompt-Anforderung einen Namen ein
+
+2. Geben über eine Prompt-Anforderung ein Alter ein
+
+3. Geben Sie in Abhängigkeit vom angegebenen Alter 
+    folgende Getränkeauswahl in die Konsole aus :
+
+- Alter 0-5 // Milch  --> age > 0 AND age < 6
+- Alter 6-12 // Saft
+- Alter 13-17 // Cola
+- 18 + // Wein
+
+-->zB: "Max trinkt Cola."
