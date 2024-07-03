@@ -79,23 +79,40 @@ job = "driver";  // .. fährt TAXI! / UBER
 // job = "teacher"; // .. unterrichtet!
 // job = "instructor"; // .. unterrichtet!
 
-switch (job) 
-{
-    case "driver": // --> job == "driver"
-        console.log(firstName + " .. fährt TAXI!");
-        break;
-    case "diver": 
-        console.log(firstName + " .. taucht im Rhein!");
-        break;
-    case "artist": 
-        console.log(firstName + "  .. malt ein Bild!");
-        break;
-    case "teacher": 
-    case "instructor": 
-        console.log(firstName + "  .. unterrichtet!");
-        break;
+// switch (job) 
+// {
+//     case "driver": // --> job == "driver"
+//         console.log(firstName + " .. fährt TAXI!");
+//         break;
+//     case "diver": 
+//         console.log(firstName + " .. taucht im Rhein!");
+//         break;
+//     case "artist": 
+//         console.log(firstName + "  .. malt ein Bild!");
+//         break;
+//     case "teacher": 
+//     case "instructor": 
+//         console.log(firstName + "  .. unterrichtet!");
+//         break;
         
-    default: // Wichtig!
-        console.log(firstName + " .. macht etwas anderes!");
+//     default: // Wichtig!
+//         console.log(firstName + " .. macht etwas anderes!");
+//         break;
+// }
+
+/********  Fallunterscheidung / SWITCH|CASE 2 *******/
+
+const cond = true;
+const value = 10;
+
+switch (cond) {
+    case (value == 1):
+        console.log("Value hat den Wert 1.");
+        break;
+    case (value == 2):
+        console.log("Value hat den Wert 2.");
+        break;
+    default:
+        console.log("Value hat einen anderen Wert.");
         break;
 }
