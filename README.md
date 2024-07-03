@@ -66,3 +66,5 @@ Wahrheitswerte und Vergleiche
 # 06_controlflow
 
 > Grundlagen Selektion: if, else, else if, ternärer operator, switch-case
+
+> persönliche Meinung: Switch-Case ist zutiefst zu Verdammen.

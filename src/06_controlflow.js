@@ -33,36 +33,54 @@
 
 /****** Fallunterscheidung / SWITCH|CASE 1 ******/
 
-const firstName = "Jane";
-let job;
+// const firstName = "Jane";
+// let job;
 
 // job = "driver";  // .. fährt TAXI! / UBER
 // job = "diver"; // .. taucht im Rhein! 
 // job = "artist"; // .. malt ein Bild!
-// job = "pilot"; // .. macht etwas anderes! --> default
-// job = "teacher"; // .. unterrichtet!
-// job = "instructor"; // .. unterrichtet!
+// //job = "pilot"; // .. macht etwas anderes! --> default
+// // job = "teacher"; // .. unterrichtet!
+// // job = "instructor"; // .. unterrichtet!
 
-switch (job) {
-    case "driver":
-        console.log(firstName + " fährt TAXI.");
-    break;
-    case "diver":
-        console.log(firstName + " taucht im Rhein!");
-    break;
-    case "artist":
-        console.log(firstName + " malt ein Bild!");
-    break;
-    case "teacher":
-        console.log(firstName + " unterrichtet!");
-    break;
-    case "instructor":
-        console.log(firstName + " unterrichtet!");
-    break;
+// switch (job) {
+//     case "driver":
+//         console.log(firstName + " fährt TAXI.");
+//     break;
+//     case "diver":
+//         console.log(firstName + " taucht im Rhein!");
+//     break;
+//     case "artist":
+//         console.log(firstName + " malt ein Bild!");
+//     break;
+//     case "teacher":
+//         console.log(firstName + " unterrichtet!");
+//     break;
+//     case "instructor":
+//         console.log(firstName + " unterrichtet!");
+//     break;
 
+//     default:
+//         console.log(firstName + " macht etwas anderes!");
+//     break;
+// }
+
+/********  Fallunterscheidung / SWITCH|CASE 2 *******/
+
+const cond = false; // ach du lieber Gott. Lesbarkeit? kognitive Komplexität?
+const value = 2;
+
+switch (cond) {
+    case (value == 1):
+        console.log("Value hat den Wert 1.");
+        break;
+    case (value == 2):
+        console.log("Value hat den Wert 2.");
+        break;
     default:
-        console.log(firstName + " macht etwas anderes!");
-    break;
+        console.log("Value hat einen anderen Wert.");
+        break;
 }
+
 
 
