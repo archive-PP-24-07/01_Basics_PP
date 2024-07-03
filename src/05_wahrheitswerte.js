@@ -9,4 +9,4 @@ ageMark = year - birthYearMark;
 console.log("ageJohn: " + ageJohn);
 console.log("ageMark: " + ageMark);
 
-console.log("Ist John älter? " + (ageJohn > ageMark) ? "ja" : "nein");
+console.log("Ist John älter? " + ((ageJohn > ageMark) ? "ja" : "nein"));
