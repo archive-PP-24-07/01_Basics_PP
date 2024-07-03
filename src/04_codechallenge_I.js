@@ -35,7 +35,7 @@ const prompt = require('prompt-sync')({sigint: true});
 
 /*********** Variante 2  ****************/
 
-// // Kompaktere Lösung
+// Kompaktere Lösung
 
 // let zahl1, zahl2, summe;
 
