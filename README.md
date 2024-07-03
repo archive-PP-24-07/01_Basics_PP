@@ -55,8 +55,12 @@ Ausgabe Testen console.log("ping")
 4. Geben Sie die Summe der Zahlen in die Konsole aus:
     "Die Summe der Zahlen ist: summe"
 
+> Beachte: prompt gibt string zurück, muss zum addieren auf Number gecast werden
+
 # 05_wahrheitswerte
 
 Wahrheitswerte und Vergleiche
+
+> soweit klar :)
 
 # 06_controlflow
