@@ -55,12 +55,14 @@ Ausgabe Testen console.log("ping")
 4. Geben Sie die Summe der Zahlen in die Konsole aus:
     "Die Summe der Zahlen ist: summe"
 
-> Beachte: prompt gibt string zurück, muss zum addieren auf Number gecast werden
+> Beachte: prompt gibt string zurück, muss zum addieren auf "Number" gecasted werden
 
 # 05_wahrheitswerte
 
 Wahrheitswerte und Vergleiche
 
-> soweit klar :)
+> Grundlagen: true,false,Ausdrücke etc. 
 
 # 06_controlflow
+
+> Grundlagen Selektion: if, else, else if, ternärer operator, switch-case
