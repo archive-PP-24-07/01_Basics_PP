@@ -55,3 +55,4 @@ Ausgabe Testen console.log("ping")
 4. Geben Sie die Summe der Zahlen in die Konsole aus:
     "Die Summe der Zahlen ist: summe"
 
+# 05_wahrheitswerte
