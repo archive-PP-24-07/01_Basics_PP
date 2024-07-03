@@ -17,40 +17,53 @@ Alter 13-17 // Cola
 /* Getränke-Challenge */
 
 const prompt = require('prompt-sync')({sigint: true});
-let product;
-let numbers = /^[0-9]+$/;
-let maxTrys = 5;
-let count = 0;
+const products = new Map([
+    ["Milch", "Milch mit 3.5% Fettanteil"],
+    ["Saft", "Saft aus frischen Orangen"],
+    ["Cola", "Cola mit Eis"],
+    ["Wein", "Wein, einen guten Dornfelder aus der Palz"]
+  ]);
 
-let customerName = prompt("Bitte einen Namen eingeben: ");
+const customerName = prompt("Bitte einen Namen eingeben: ");
+const product = getProductFromAge(getCustomerAgeValidated());
 
-let customerAge;
-do
-{
-    count++;
-    customerAge = prompt("Bitte ein Alter eingeben (nur die Zahl): ");
-} 
-while (!customerAge.match(numbers) && count < maxTrys);
+console.log("\n" + customerName + " trinkt " + product + ".\n");
 
-if (count >= maxTrys){
-    product = "Milch"
-    console.log("Es wurde keine Zahl eingeben, dann gibt es eben nur Milch.");
-}
-else if(customerAge > 0 && customerAge < 6){
-    product = "Milch"
-}
-else if(customerAge >= 6 && customerAge <= 12){
-    product = "Saft"
-}
-else if(customerAge >= 13 && customerAge <= 17){
-    product = "Cola"
-}
-else if(customerAge >= 18 ){
-    product = "Wein"
-}
-else{
-    product = "Milch"
-    console.log("Es wurde kein sinnvolles Alter angegeben, dann gibt es eben nur Milch.");
+function getProductFromAge(customerAge){
+    if(customerAge > 0 && customerAge < 6){
+        return products.get("Milch");
+    }
+    else if(customerAge >= 6 && customerAge <= 12){
+        return products.get("Saft");
+    }
+    else if(customerAge >= 13 && customerAge <= 17){
+        return products.get("Cola");
+    }
+    else if(customerAge >= 18 ){
+        return products.get("Wein");
+    }
+    else{
+        console.log("Es wurde kein sinnvolles Alter angegeben, dann gibt es eben nur: \"" + products.get("Milch") + "\".");
+        return products.get("Milch");
+    }
 }
 
-console.log("\n" + customerName + " trinkt " + product);
+function getCustomerAgeValidated(){
+    const numbers = /^[0-9]+$/;
+    const maxTrys = 3;   
+    let age = 0;
+
+    function getCustomerAge(){
+        let count = 0;
+        do
+        {
+            count++;
+            age = prompt("Bitte ein Alter eingeben (nur die Zahl): ");
+        } 
+        while (!age.match(numbers) && count < maxTrys);
+
+        return (count >= maxTrys) ? 0 : age;        
+    }
+
+    return getCustomerAge();
+}
