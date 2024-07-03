@@ -56,3 +56,7 @@ Ausgabe Testen console.log("ping")
     "Die Summe der Zahlen ist: summe"
 
 # 05_wahrheitswerte
+
+Wahrheitswerte und Vergleiche
+
+# 06_controlflow
