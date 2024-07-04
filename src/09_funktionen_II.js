@@ -45,7 +45,7 @@ function calculateAndReturnResultString(formatedBAArray){
 
 function readBasicArithmeticString(){
 	const prompt = require('prompt-sync')({sigint: true});
-	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)\n"
+	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)"
 	const basicArithmeticPattern = /^[-+]?\d*\.?\d+[-+*/][-+]?\d*\.?\d+$/;
     const maxTrys = 3;   
     let chosenArithmetic = "";
