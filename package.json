@@ -2,7 +2,7 @@
   "name": "01_basics_pp",
   "version": "1.0.0",
   "description": "",
-  "main": "src/04_codechallenge_1.js",
+  "main": "src/03_prompt.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
