@@ -31,11 +31,10 @@ function calculateAndReturnResult(SlicedBasicArithmeticArray){
 		result = parseFloat(SlicedBasicArithmeticArray[0]) / parseFloat(SlicedBasicArithmeticArray[2]);
 	}
 	else{
-		return "Exception: Grundrechenart konnte nicht erkannt werden. {function: calculateAndReturnResult)";
+		throw "Grundrechenart konnte nicht erkannt werden.";
 	}
 	
-
-	arithmeticInfo += SlicedBasicArithmeticArray[0] + SlicedBasicArithmeticArray[1] +SlicedBasicArithmeticArray[2];
+	arithmeticInfo += SlicedBasicArithmeticArray[0] + SlicedBasicArithmeticArray[1] + SlicedBasicArithmeticArray[2];
 	return arithmeticInfo + " = " + result;
 }
 
@@ -44,7 +43,7 @@ function getBasicArithmeticString(){
 	const basicArithmeticPattern = /^[-+]?\d*\.?\d+[-+*/][-+]?\d*\.?\d+$/;
     const maxTrys = 3;   
     let chosenArithmetic ="";
-	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2.5*4.2 oder 1.23 / -4.56 oder 0.1+0.2 etc.)\n"
+	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)\n"
 
     function getBasicArithmeticValidated(){
 		let count = 0;
@@ -52,18 +51,30 @@ function getBasicArithmeticString(){
         {
 			console.log(info);
             count++;
-            chosenArithmetic = removeWhitespaces(prompt("Eingabe: "));
+            chosenArithmetic = removeWhitespacesAndReplaceComma(prompt("Eingabe: "));
         } 
         while (!chosenArithmetic.match(basicArithmeticPattern) && count < maxTrys);
 
-        return (count >= maxTrys) ? "Ungültige Eingabe! Programm wird beendet." : chosenArithmetic;        
+		if(count >= maxTrys){
+			 throw "Ungültige Eingabe. Das Programm wird beendet!"
+		}else{
+			return chosenArithmetic;    
+		}
     }
 
     return getBasicArithmeticValidated();
 }
 
+function removeWhitespacesAndReplaceComma(string){
+	return replaceComma(removeWhitespaces(string));
+}
+
 function removeWhitespaces(string){
 	return string.replace(/\s/g, '');
+}
+
+function replaceComma(string){
+	return string.replace(/,/g, '.');
 }
 
 function sliceBasicArithmeticStringToArray(basicArithmeticString ){
@@ -71,7 +82,7 @@ function sliceBasicArithmeticStringToArray(basicArithmeticString ){
 	let operator = String(basicArithmeticString).at(operatorIndex);
 	let first = String(basicArithmeticString).substring(0,operatorIndex);
 	let second = String(basicArithmeticString).substring(operatorIndex+1);
-	return [first, operator, second];
+	return [first, operator, second];		
 }
 
 function findIndexOfOperator(basicArithmeticString){
