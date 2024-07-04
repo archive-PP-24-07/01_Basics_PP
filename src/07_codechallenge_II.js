@@ -17,7 +17,7 @@ Alter 13-17 // Cola
 /* Getränke-Challenge */
 console.log("\n" + getCustomerName() + " trinkt " + getProductFromAge(getCustomerAgeValidated()) + ".\n");
 
-function getCustomerName(){return require('prompt-sync')({sigint: true}).prompt("Bitte einen Namen eingeben: ");}
+function getCustomerName(){return require('prompt-sync')({sigint: true})("Bitte einen Namen eingeben: ");}
 
 function getProductFromAge(customerAge){
 
@@ -61,7 +61,7 @@ function getCustomerAgeValidated(){
         do
         {
             count++;
-            age = require('prompt-sync')({sigint: true}).prompt("Bitte ein Alter eingeben (nur die Zahl): ");
+            age = require('prompt-sync')({sigint: true})("Bitte ein Alter eingeben (nur die Zahl): ");
         } 
         while (!age.match(numbers) && count < maxTrys);
 
