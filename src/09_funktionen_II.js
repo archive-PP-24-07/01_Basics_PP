@@ -8,42 +8,47 @@
 4. Ausgabe in Konsole : 
 */
 
-console.log(calculateAndReturnResult(sliceBasicArithmeticStringToArray(getBasicArithmeticString())));
+console.log(calculateAndReturnResultString(formatBasicArithmeticInputToCalculate(readBasicArithmeticString())));
 
-function calculateAndReturnResult(SlicedBasicArithmeticArray){
-	let arithmeticInfo = "";
-	let result;
-
-	if(SlicedBasicArithmeticArray[1] == "+"){
-		arithmeticInfo = "Addition: "; 
-		result = parseFloat(SlicedBasicArithmeticArray[0]) + parseFloat(SlicedBasicArithmeticArray[2]);
-	}
-	else if(SlicedBasicArithmeticArray[1] == "-"){
-		arithmeticInfo = "Subtraktion: "; 
-		result = parseFloat(SlicedBasicArithmeticArray[0]) - parseFloat(SlicedBasicArithmeticArray[2]);
-	}
-	else if(SlicedBasicArithmeticArray[1] == "*"){
-		arithmeticInfo = "Multiplikation: "; 
-		result = parseFloat(SlicedBasicArithmeticArray[0]) * parseFloat(SlicedBasicArithmeticArray[2]);
-	}
-	else if(SlicedBasicArithmeticArray[1] == "/"){
-		arithmeticInfo = "Division: "; 
-		result = parseFloat(SlicedBasicArithmeticArray[0]) / parseFloat(SlicedBasicArithmeticArray[2]);
-	}
-	else{
-		throw "Grundrechenart konnte nicht erkannt werden.";
-	}
+function calculateAndReturnResultString(formatedBAArray){
 	
-	arithmeticInfo += SlicedBasicArithmeticArray[0] + SlicedBasicArithmeticArray[1] + SlicedBasicArithmeticArray[2];
-	return arithmeticInfo + " = " + result;
+	function calculate(){
+		let arithmeticInfo = "";
+		let result;
+		if(formatedBAArray[1] == "+"){
+			arithmeticInfo = "Addition: "; 
+			result = parseFloat(formatedBAArray[0]) + parseFloat(formatedBAArray[2]);
+		}
+		else if(SlicedBasicArithmeticArray[1] == "-"){
+			arithmeticInfo = "Subtraktion: "; 
+			result = parseFloat(formatedBAArray[0]) - parseFloat(formatedBAArray[2]);
+		}
+		else if(SlicedBasicArithmeticArray[1] == "*"){
+			arithmeticInfo = "Multiplikation: "; 
+			result = parseFloat(formatedBAArray[0]) * parseFloat(formatedBAArray[2]);
+		}
+		else if(SlicedBasicArithmeticArray[1] == "/"){
+			arithmeticInfo = "Division: "; 
+			result = parseFloat(formatedBAArray[0]) / parseFloat(formatedBAArray[2]);
+		}
+		else{
+			throw "Grundrechenart konnte nicht erkannt werden.";
+		}
+		
+		arithmeticInfo += formatedBAArray[0] + formatedBAArray[1] + formatedBAArray[2];
+		return arithmeticInfo + " = " + result;
+
+	}
+
+	return calculate();
 }
 
-function getBasicArithmeticString(){
+function readBasicArithmeticString(){
 	const prompt = require('prompt-sync')({sigint: true});
+	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)\n"
 	const basicArithmeticPattern = /^[-+]?\d*\.?\d+[-+*/][-+]?\d*\.?\d+$/;
     const maxTrys = 3;   
-    let chosenArithmetic ="";
-	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)\n"
+    let chosenArithmetic = "";
 
     function getBasicArithmeticValidated(){
 		let count = 0;
@@ -77,7 +82,7 @@ function replaceComma(string){
 	return string.replace(/,/g, '.');
 }
 
-function sliceBasicArithmeticStringToArray(basicArithmeticString ){
+function formatBasicArithmeticInputToCalculate(basicArithmeticString ){
 	let operatorIndex = findIndexOfOperator(basicArithmeticString);
 	let operator = String(basicArithmeticString).at(operatorIndex);
 	let first = String(basicArithmeticString).substring(0,operatorIndex);
