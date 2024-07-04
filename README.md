@@ -84,3 +84,8 @@ Wahrheitswerte und Vergleiche
 - 18 + // Wein
 
 -->zB: "Max trinkt Cola."
+
+# 08_funtionen und 09_funktionen
+
+> Kurs verpasst, proforma upload von:
+> src/08_funktionen_I.js und src/09_funktionen_II.js
