@@ -1,5 +1,3 @@
-
-
 /*** Rechner */
 /*
 0. a+b | a-b | a*b | a/b  --> Ergebnis c 
