@@ -11,32 +11,62 @@
 console.log(calculateAndReturnResultString(formatBasicArithmeticInputToCalculate(readBasicArithmeticString())));
 
 function calculateAndReturnResultString(formatedBAArray){
+	const ERROR_DIVIDE_BY_ZERO = "Division durch 0 ist leider in diesem Universum nicht möglich.\nBitte das Universum wechseln oder das Ganze sein lassen.";
+    const ERROR_OPERATOR_NOT_DETECTED = "Grundrechenart konnte nicht erkannt werden.";
+
+	function add(first, second){
+		return first + second;
+	}
+
+	function substract(first, second){
+		return first - second;
+	}
+
+	function multiplicate(first, second){
+		return first * second;
+	}
+
+	function divideToFixed(first, second){
+		if (second == 0){
+			return ERROR_DIVIDE_BY_ZERO
+		}
+		return (first / second).toFixed(2);
+	}
 	
 	function calculate(){
 		let arithmeticInfo = "";
 		let result;
-		if(formatedBAArray[1] == "+"){
+		let first = parseFloat(formatedBAArray[0]);
+		let second = parseFloat(formatedBAArray[2]);
+		let operator = formatedBAArray[1];
+
+		if(operator == "+"){
 			arithmeticInfo = "Addition: "; 
-			result = parseFloat(formatedBAArray[0]) + parseFloat(formatedBAArray[2]);
+			result = add(first,second);
 		}
-		else if(SlicedBasicArithmeticArray[1] == "-"){
+		else if(operator == "-"){
 			arithmeticInfo = "Subtraktion: "; 
-			result = parseFloat(formatedBAArray[0]) - parseFloat(formatedBAArray[2]);
+			result = substract(first, second);
 		}
-		else if(SlicedBasicArithmeticArray[1] == "*"){
+		else if(operator == "*"){
 			arithmeticInfo = "Multiplikation: "; 
-			result = parseFloat(formatedBAArray[0]) * parseFloat(formatedBAArray[2]);
+			result = multiplicate(first, second);
 		}
-		else if(SlicedBasicArithmeticArray[1] == "/"){
+		else if(operator == "/"){
 			arithmeticInfo = "Division: "; 
-			result = parseFloat(formatedBAArray[0]) / parseFloat(formatedBAArray[2]);
+			result = divideToFixed(first, second);
 		}
 		else{
-			throw "Grundrechenart konnte nicht erkannt werden.";
+			throw ERROR_OPERATOR_NOT_DETECTED
 		}
 		
-		arithmeticInfo += formatedBAArray[0] + formatedBAArray[1] + formatedBAArray[2];
-		return arithmeticInfo + " = " + result;
+		if(isNaN(result)){
+			return result;
+		}
+		else{
+			arithmeticInfo += first + operator + second;
+			return arithmeticInfo + " = " + result;
+		}
 
 	}
 
@@ -44,6 +74,7 @@ function calculateAndReturnResultString(formatedBAArray){
 }
 
 function readBasicArithmeticString(){
+	const ERROR_INVALID_INPUT = "Ungültige Eingabe. Das Programm wird beendet!"
 	const prompt = require('prompt-sync')({sigint: true});
 	const info = "Bitte eine Berechnung eingeben:\n(z. Bsp. : 3 + 5 oder -2,5 *4.2 oder 1.23 /-4.56 oder 0.1+  0,2 etc.)"
 	const basicArithmeticPattern = /^[-+]?\d*\.?\d+[-+*/][-+]?\d*\.?\d+$/;
@@ -61,7 +92,7 @@ function readBasicArithmeticString(){
         while (!chosenArithmetic.match(basicArithmeticPattern) && count < maxTrys);
 
 		if(count >= maxTrys){
-			 throw "Ungültige Eingabe. Das Programm wird beendet!"
+			 throw ERROR_INVALID_INPUT;
 		}else{
 			return chosenArithmetic;    
 		}
