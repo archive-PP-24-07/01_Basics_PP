@@ -127,11 +127,13 @@ function formatBasicArithmeticStringToCalculate(basicArithmeticString ){
 function findIndexOfOperator(basicArithmeticString){
 	const operators = ["+", "-", "*", "/"];
 	let out;
+	
 	operators.forEach(operator => {
 		let index = String(basicArithmeticString).indexOf(operator);
 		if( index > -1){
 			out = index;
 		}
 	});
+	
 	return out;
 }
