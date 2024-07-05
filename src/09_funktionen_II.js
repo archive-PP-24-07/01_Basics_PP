@@ -8,7 +8,7 @@
 4. Ausgabe in Konsole : 
 */
 
-console.log(calculateAndReturnResultString(formatBasicArithmeticInputToCalculate(readBasicArithmeticString())));
+console.log(calculateAndReturnResultString(formatBasicArithmeticStringToCalculate(readBasicArithmeticString())));
 
 function calculateAndReturnResultString(formatedBAArray){
 	const ERROR_DIVIDE_BY_ZERO = "Division durch 0 ist leider in diesem Universum nicht möglich.\nBitte das Universum wechseln oder das Ganze sein lassen.";
@@ -113,7 +113,7 @@ function replaceComma(string){
 	return string.replace(/,/g, '.');
 }
 
-function formatBasicArithmeticInputToCalculate(basicArithmeticString ){
+function formatBasicArithmeticStringToCalculate(basicArithmeticString ){
 	let operatorIndex = findIndexOfOperator(basicArithmeticString);
 	let operator = String(basicArithmeticString).at(operatorIndex);
 	let first = String(basicArithmeticString).substring(0,operatorIndex);
