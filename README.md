@@ -89,3 +89,11 @@ Wahrheitswerte und Vergleiche
 
 > Kurs verpasst, proforma upload von:
 > src/08_funktionen_I.js und src/09_funktionen_II.js
+
+# 09_Sven_funktionen
+
+> persönliche Musterlösung
+
+# 10_Musterlösung
+
+> elegante SRP Lösung mit Inputkontrolle
