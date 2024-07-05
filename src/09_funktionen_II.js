@@ -87,7 +87,10 @@ function readBasicArithmeticString(){
         {
 			console.log(info);
             count++;
-            chosenArithmetic = removeWhitespacesAndReplaceCommaAndAlternativDivideOperator(prompt("Eingabe: "));
+			let filteredString = removeWhitespaces(prompt("Eingabe: "));
+			filteredString = replaceComma(filteredString);
+			filteredString = replaceAlternativDivideOperator(filteredString);
+            chosenArithmetic = filteredString;
         } 
         while (!chosenArithmetic.match(basicArithmeticPattern) && count < maxTrys);
 
@@ -99,13 +102,6 @@ function readBasicArithmeticString(){
     }
 
     return getBasicArithmeticValidated();
-}
-
-function removeWhitespacesAndReplaceCommaAndAlternativDivideOperator(string){
-	let filteredString = removeWhitespaces(string);
-	filteredString = replaceComma(filteredString);
-	filteredString = replaceAlternativDivideOperator(filteredString);
-	return filteredString;
 }
 
 function removeWhitespaces(string){
