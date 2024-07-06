@@ -43,7 +43,7 @@ Ausgabe Testen console.log("ping")
 
 # 03_prompt
 
-> installiern mit npm i prompt-sync
+> installiern mit: npm i prompt-sync
 
 > Erstelle: .gitignore
 
