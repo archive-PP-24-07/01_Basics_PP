@@ -92,7 +92,7 @@ Wahrheitswerte und Vergleiche
 
 # 09_Sven_funktionen
 
-> persönliche Musterlösung
+> persönliche Musterlösung /leider nicht gut testbar!
 
 # 10_Musterlösung
 
