@@ -73,9 +73,9 @@ function getItem(cards, position) {
     return cards;
   }
 
-const cards = [1, 2, 3];
-const expected = [1, 2];
-console.log(removeItemFromTop(cards));
+// const cards = [1, 2, 3];
+// const expected = [1, 2];
+// console.log(removeItemFromTop(cards));
   
   /**
    * Remove card from the end of the cards array
