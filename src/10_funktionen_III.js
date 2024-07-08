@@ -151,7 +151,7 @@ function add(a,b) {
 // output("hello");
 // output(2);
 function output(outputData) {
-   console.log(typeof outputData);
+   //console.log(typeof outputData);
     if (typeof outputData == "number") {
         console.log(INFO_STR_RES + outputData); 
     } else {
