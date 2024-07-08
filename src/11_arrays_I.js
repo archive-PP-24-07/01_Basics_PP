@@ -39,12 +39,51 @@
 
 
 /* 02b. For-Schleife für Array-Index (Iteration)*/
+// let arr = ["Ich","bin","die","coole","Maxine","Mützerich"];
+// for (let i = 0; i < arr.length; i++) 
+// {
+// //    output(i); // interner Index 
+//    output(arr[i]);  // Mapping  intern --> extern
+// }
 
-let arr = ["Ich","bin","die","coole","Maxine","Mützerich"];
-for (let i = 0; i < arr.length; i++) 
-{
-//    output(i); // interner Index 
-   output(arr[i]);  // Mapping  intern --> extern
+
+/********* Überlegungen - Transponierung **********/
+
+/*
+1. Einer Variablen kann Ihr eigener Wert zugewiesen werden.
+Solange die Variable existiert, bleibt dieser erhalten.
+hier: Aufsummierung
+*/
+
+/* Zu "Fuß" - DRY !!! */
+// let a = 0; // Anfangswert
+// output("inhalt von a: " + a);
+// a = a + 1; // a = 0 + 1
+// output("inhalt von a: " + a);
+// a = a + 1; // a = 1 + 1
+// output("inhalt von a: " + a);
+// a = a + 1; // a = 2 + 1
+// output("inhalt von a: " + a);
+
+/* Besser: mit FOR-Schleife */
+
+let a = 0; // Anfangswert
+for (let i = 0; i < 10; i++) {
+   // a = a + 1
+    a += 1;  
+    output("inhalt von a: " + a);
+}
+
+/*
+1a. Einer Variablen kann Ihr eigener Wert zugewiesen werden
+Solange die Variable existiert, bleibt dieser erhalten
+hier: Verkettung eines Strings // Transponierung
+*/
+
+let str = ""; // Anfangswert
+for (let i = 0; i < 10; i++) {
+   str += "Test" + " "; // a = a + 1
+   output(str);
 }
 
 
@@ -73,13 +112,6 @@ function getSentence(word1,word2,word3,word4,word5,word6) {
 }
 
 
-// Modul: Ausgabe in Konsole : Test
-// output("hi"); 
-function output(outputStr) {
-    console.log(outputStr);
-}
-
-
 /*** 01a. Funktionalität mit Array 1 */
 // Kritik | Überlegung
 // word1,word2, .... wordN :: Semantische Struktur
@@ -98,4 +130,31 @@ function getSentenceArr(arr) {
                 PUNCT;
 
     return str;
+}
+
+
+/*** 01b. Funktionalität mit Array 2  */
+// Transponierung:  untereinander ---> nebeneinander
+// Helge Schneider: Anananandereihung ...
+// output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
+function getSentenceArr2(arr) {
+    const GAP = " ";
+    const PUNCT = ".";
+    let str;
+
+    for (let i = 0; i < arr.length; i++) 
+    {
+        output(arr[i]);  
+    }
+
+    return str;
+}
+
+
+
+
+// Modul: Ausgabe in Konsole : Test
+// output("hi"); 
+function output(outputStr) {
+    console.log(outputStr);
 }
