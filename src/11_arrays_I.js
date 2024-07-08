@@ -135,7 +135,7 @@ function getSentenceArr(arr) {
 
 /*** 01b. Funktionalität mit Array 2  */
 // Transponierung:  untereinander ---> nebeneinander
-// Helge Schneider: Anananandereihung ...
+// Helge Schneider: Anananananderdereihung ...
 output(getSentenceArr2(["Ich","bin","die","coole","Maxine","Mützerich"]));
 function getSentenceArr2(arr) {
 
@@ -154,10 +154,15 @@ function getSentenceArr2(arr) {
     // return str ;
 
     // 2. Iteration: Struktur erzeugen + trimmen()
-    for (let i = 0; i < arr.length; i++) {
-        str += arr[i] + GAP; 
-    }
-    return str.trim() + PUNCT;
+    // for (let i = 0; i < arr.length; i++) {
+    //     str += arr[i] + GAP; 
+    // }
+    // return str.trim() + PUNCT;
+
+    // 3. Variante: Ausnutzen von generischen Fuktionen ...
+    return arr.join(GAP) + PUNCT;
+
+    
 
 }
 
