@@ -2,7 +2,7 @@
   "name": "01_basics_pp",
   "version": "1.0.0",
   "description": "Hallo Welt JS",
-  "main": "exercs/enchantements.js",
+  "main": "src/11_Arrays_I.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

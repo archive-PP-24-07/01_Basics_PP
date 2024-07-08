@@ -16,8 +16,8 @@
 
 /*** 01. Funktionalität mit Einzelparametern */
 // --> "Ich bin Max Mütze."
-// output(getSentence("Ich","bin","Max","Mütze"));
-// output(getSentence("Ich","bin","die","coole","Maxine","Mützerich"));
+out(getSentence("Ich","bin","Max","Mütze"));
+// out(getSentence("Ich","bin","die","coole","Maxine","Mützerich"));
 function getSentence(word1,word2,word3,word4) {
     const GAP = " ";
     const PUNCT = ".";
@@ -35,7 +35,7 @@ function getSentence(word1,word2,word3,word4) {
 
 // Modul: Ausgabe in Konsole : Test
 // output("hi"); 
-function output(outputStr) {
+function out(outputStr) {
     console.log(outputStr);
 }
 
