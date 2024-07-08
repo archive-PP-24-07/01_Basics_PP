@@ -40,12 +40,12 @@
 
 /* 02b. For-Schleife für Array-Index (Iteration)*/
 
-let arr = ["Ich","bin","die","coole","Maxine","Mützerich"];
-for (let i = 0; i < arr.length; i++) 
-{
-//    output(i); // interner Index 
-   output(arr[i]);  // Mapping  intern --> extern
-}
+// let arr = ["Ich","bin","die","coole","Maxine","Mützerich"];
+// for (let i = 0; i < arr.length; i++) 
+// {
+// //    output(i); // interner Index 
+//    output(arr[i]);  // Mapping  intern --> extern
+// }
 
 
 /**
@@ -57,19 +57,29 @@ for (let i = 0; i < arr.length; i++)
 /*** 01. Funktionalität mit Einzelparametern */
 // --> "Ich bin Max Mütze."
 // output(getSentence("Ich","bin","Max","Mütze"));
-// output(getSentence("Ich","bin","die","coole","Maxine","Mützerich"));
-function getSentence(word1,word2,word3,word4,word5,word6) {
+//output(getSentence(["Ich","bin","die","coole","Maxine","Mützerich"]));
+function getSentence(arr) {
     const GAP = " ";
     const PUNCT = ".";
-    let str =   word1 + GAP +
-                word2 + GAP +
-                word3 + GAP +
-                word4 + GAP +
-                word5 + GAP +
-                word6 +
-                PUNCT;
+    let str = "";
+    output("*********Vertical**************");
+    for (let i = 0; i < arr.length; i++) {
+        const element = arr[i];
+        output(arr[i]);
+    }
+    output("**********Horizontal*************");
 
-    return str;
+    arr.forEach(word => {str +=  word + GAP});
+    return str.trim() + PUNCT;
+
+    
+}
+
+output(getPeterSchmidtscherEinzeiler(["Ich","bin","die","coole","Maxine","Mützerich"]))
+function getPeterSchmidtscherEinzeiler(arr){
+    const GAP = " ";
+    const PUNCT = ".";
+    return arr.join(GAP) + PUNCT;
 }
 
 
