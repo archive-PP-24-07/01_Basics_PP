@@ -63,7 +63,7 @@ const TAB_STR = "\t";
 let stack = [];
 
 // Modul: HTML-Synthese | Test
-//output(getHTML());
+output(getHTML());
 function getHTML() {
 
     let htmlStr = "";
