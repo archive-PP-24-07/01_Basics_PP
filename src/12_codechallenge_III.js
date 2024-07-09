@@ -24,17 +24,12 @@ function getSentence(arr,op) {
     switch (op) {
         case "S":
             return arr.join(GAP) +"."
-            break;
         case "Q":
             return arr.join(GAP) +"?"
-            break;
         case "E":
             return arr.join(GAP) +"!"
-            break;
-    
         default:
             throw "Satzart konnte nicht erkannt werden."
-            break;
     }
 }
 
