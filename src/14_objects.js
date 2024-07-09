@@ -29,8 +29,23 @@ let arr;
 
 
 /***** Objekte 1 Daten/Funktionen *******/
+function stringConnector(a,b){
+    return a + " " + b;
+}
+
+let person = {
+    firstName : "Marco",
+    familyName: "Mustermen",
+    salary: [120000, 160000],
+    hasPermission : true,
+    fullName: function() {
+        return stringConnector(this.firstName, this.familyName)
+    }
+} 
 
 
+output(person);
+output(person.fullName());
 
 
 
