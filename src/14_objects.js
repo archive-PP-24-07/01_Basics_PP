@@ -29,23 +29,43 @@ let arr;
 
 
 /***** Objekte 1 Daten/Funktionen *******/
-function stringConnector(a,b){
-    return a + " " + b;
-}
+// function stringConnector(a,b){
+//     return a + " " + b;
+// }
 
-let person = {
-    firstName : "Marco",
-    familyName: "Mustermen",
-    salary: [120000, 160000],
-    hasPermission : true,
-    fullName: function() {
-        return stringConnector(this.firstName, this.familyName)
+// let person = {
+//     firstName : "Marco",
+//     familyName: "Mustermen",
+//     salary: [120000, 160000],
+//     hasPermission : true,
+//     fullName: function() {
+//         return stringConnector(this.firstName, this.familyName)
+//     }
+// } 
+
+
+// output(person);
+// output(person.fullName());
+
+/***** Objekte 2 - Hierarchie *******/
+// Tiefer, tiefer - Irgendwo in der Tiefe gibt es ein Licht // K.Bush
+// Der Baikalsee ist mit 1642 m der tiefste See der Erde. ...
+// deep - deeper - deepest
+// nested object {{{}}}
+
+let baikal = {
+    value: "10",
+    deep: {
+        deeper: {
+            temperature: "4 Grad Celsius",
+            deepest: "Das Licht - auf 1642m!?!"
+        }
     }
-} 
+};
 
 
-output(person);
-output(person.fullName());
+output(baikal.deep.deeper.deepest);
+
 
 
 
