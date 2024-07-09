@@ -14,23 +14,39 @@
 
 /*** Funktion mit Array als Parameter */
 // mögliche Tests:
-output(getSentence(["Ich","bin","Max"],"S"));
-output(getSentence(["Bist","du","Max"],"Q"));
-output(getSentence(["Ich","bin"],"E"));
-output(getSentence(["Ich","hätt","gern","die","Platt","von","dene","zwei","diwodaso","Spass","mache,","habbe","Sie","die"],"Q"));
+// output(getSentence(["Ich","bin","Max"],"S"));
+// output(getSentence(["Bist","du","Max"],"Q"));
+// output(getSentence(["Ich","bin"],"E"));
+// output(getSentence(["Ich","hätt","gern","die","Platt","von","dene","zwei","diwodaso","Spass","mache,","habbe","Sie","die"],"Q"));
 
-function getSentence(arr,op) {
-    const GAP = " ";
-    switch (op) {
-        case "S":
-            return arr.join(GAP) +"."
-        case "Q":
-            return arr.join(GAP) +"?"
-        case "E":
-            return arr.join(GAP) +"!"
-        default:
-            throw "Satzart konnte nicht erkannt werden."
-    }
+// function getSentence(arr,op) {
+//     const GAP = " ";
+//     switch (op) {
+//         case "S":
+//             return arr.join(GAP) +"."
+//         case "Q":
+//             return arr.join(GAP) +"?"
+//         case "E":
+//             return arr.join(GAP) +"!"
+//         default:
+//             throw "Satzart konnte nicht erkannt werden."
+//     }
+// }
+
+output(getSentenceBest(["Ich","bin","Max"],"S"));
+output(getSentenceBest(["Bist","du","Max"],"Q"));
+output(getSentenceBest(["Ich","bin"],"E"));
+output(getSentenceBest(["Ich","hätt","gern","die","Platt","von","dene","zwei","diwodaso","Spass","mache,","habbe","Sie","die"],"Q"));
+
+function getSentenceBest(arr, op) {
+    let sentence = arr.join(" ");
+    const punctuationMap = {
+        "S": ".",
+        "Q": "?",
+        "E": "!"
+    };
+    let punctuation = punctuationMap[op] || ".";
+    return sentence + punctuation;
 }
 
 
